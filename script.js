@@ -65,12 +65,12 @@ $(document).ready(function() {
 
   function handleTaskDeleteRequest() {
     var parentEl = $(this).parent().parent();
-    var id = parentEl.attr('data-task-id');
-    var requestUrl = apiRoot + 'deleteById';
+    var taskId = parentEl.attr('data-task-id');
+    var requestUrl = apiRoot + 'deleteTask';
 
     $.ajax({
       url: requestUrl + '?' + $.param({
-        id: id
+        taskId: taskId
       }),
       method: 'DELETE',
       success: function() {
